@@ -1,0 +1,14 @@
+<div class="navbar d-flex align-items-center justify-content-between">
+   <div><%= link_to "Accueil", articles_path %></div>
+   <div><%= link_to "New article", new_article_path %></div>
+</div>
+<div class="articles">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article.id) %>
+        <p><%= article.content %></p>
+      </li>
+      <% end %>
+  </ul>
+</div>
